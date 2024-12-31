@@ -1,4 +1,4 @@
-package com.craftly.craftlycore.user;
+package com.craftly.craftlycore.models.user;
 
 import java.util.List;
 import java.util.UUID;

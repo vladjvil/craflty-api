@@ -1,6 +1,6 @@
-package com.craftly.craftlyuser.service;
+package com.craftly.craftlyuser.service.freelancer;
 
-import com.craftly.craftlycore.user.FreelancerCreateDTO;
+import com.craftly.craftlycore.models.user.FreelancerCreateDTO;
 import com.craftly.craftlyuser.entity.Freelancer;
 import com.craftly.craftlyuser.mapper.FreelancerMapper;
 import com.craftly.craftlyuser.repository.FreelancerRepository;
@@ -15,11 +15,12 @@ import reactor.core.publisher.Mono;
 public class FreelancerWriteServiceDB {
 
     private final FreelancerRepository freelancerRepository;
+
     private final FreelancerMapper freelancerMapper;
 
     public Mono<Freelancer> createFreelancer(FreelancerCreateDTO freelancerCreateDTO) {
         return freelancerRepository.save(freelancerMapper.toEntity(freelancerCreateDTO))
-                .doOnSuccess(f -> log.info("Freelancer created. Freelancer ID: {}", f.getId()))
+                .doOnSuccess(freelancer -> log.info("Freelancer created. Freelancer ID: {}", freelancer.getId()))
                 .doOnError(e -> log.error("Failed to create freelancer: {}", e.getMessage()));
     }
 }

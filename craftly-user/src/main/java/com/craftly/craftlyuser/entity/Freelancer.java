@@ -1,6 +1,6 @@
 package com.craftly.craftlyuser.entity;
 
-import com.craftly.craftlycore.user.FreelancerSpecialization;
+import com.craftly.craftlycore.models.user.FreelancerSpecialization;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;

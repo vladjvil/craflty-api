@@ -1,6 +1,6 @@
-package com.craftly.craftlyuser.service;
+package com.craftly.craftlyuser.service.user;
 
-import com.craftly.craftlycore.user.UserCreateDTO;
+import com.craftly.craftlycore.models.user.UserCreateDTO;
 import com.craftly.craftlyuser.entity.User;
 import com.craftly.craftlyuser.mapper.UserMapper;
 import com.craftly.craftlyuser.repository.UserRepository;

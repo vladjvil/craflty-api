@@ -1,7 +1,7 @@
 package com.craftly.craftlyuser.mapper;
 
-import com.craftly.craftlycore.user.FreelancerCreateDTO;
-import com.craftly.craftlycore.user.UserCreateDTO;
+import com.craftly.craftlycore.models.user.FreelancerCreateDTO;
+import com.craftly.craftlycore.models.user.UserCreateDTO;
 import com.craftly.craftlyuser.entity.Freelancer;
 import org.springframework.stereotype.Component;
 

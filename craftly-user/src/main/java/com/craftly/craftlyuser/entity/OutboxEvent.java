@@ -1,6 +1,6 @@
 package com.craftly.craftlyuser.entity;
 
-import com.craftly.craftlycore.models.user.UserJobStatus;
+import com.craftly.craftlycore.models.outbox.OutboxStatus;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -10,36 +10,27 @@ import org.springframework.data.relational.core.mapping.Table;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-@Table("users")
+@Table("outbox_events")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User {
+public class OutboxEvent {
 
     @Id
     private UUID id;
 
-    @Column("email")
-    private String email;
+    @Column("event_type")
+    private String eventType;
 
-    @Column("username")
-    private String username;
+    @Column("payload")
+    private String payload;
 
-    @Column("phone_number")
-    private String phoneNumber;
-
-    @Column("password")
-    private String password;
-
-    @Column("job_status")
-    private UserJobStatus jobStatus;
+    @Column("status")
+    private OutboxStatus status;
 
     @Column("created_at")
     @CreatedDate
     private Timestamp createdAt;
-
-    @Column("updated_at")
-    private Timestamp updatedAt;
 }
