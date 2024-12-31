@@ -1,14 +1,18 @@
 package com.craftly.craftlyuser.controller;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.craftly.craftlyuser.mapper.UserMapper;
+import com.craftly.craftlyuser.service.user.UserFacadeService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
+@RequestMapping("/users")
+@RequiredArgsConstructor
 public class UserControllerDB {
 
-    @GetMapping
-    public ResponseEntity<?> getUserById() {
-        return null;
-    }
+    private final UserFacadeService userFacadeService;
+
+    private final UserMapper userMapper;
 }

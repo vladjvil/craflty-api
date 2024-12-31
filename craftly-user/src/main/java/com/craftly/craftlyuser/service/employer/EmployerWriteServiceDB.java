@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
 public class EmployerWriteServiceDB {
 
     private final EmployerRepository employerRepository;
-    
+
     private final EmployerMapper employerMapper;
 
     public Mono<Employer> createEmployer(EmployerCreateDTO employerCreateDTO) {
