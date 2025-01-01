@@ -1,4 +1,4 @@
-package com.craftly.craftlycore.saga;
+package com.craftly.craftlycore.models.saga;
 
 public record SagaEventDTO(
     String id,

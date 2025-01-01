@@ -1,6 +1,6 @@
 package com.craftly.sagamodule.activity;
 
-import com.craftly.craftlycore.saga.SagaEventDTO;
+import com.craftly.craftlycore.models.saga.SagaEventDTO;
 
 public interface SagaActivity {
 

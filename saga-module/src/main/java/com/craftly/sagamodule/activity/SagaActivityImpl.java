@@ -1,6 +1,6 @@
 package com.craftly.sagamodule.activity;
 
-import com.craftly.craftlycore.saga.SagaEventDTO;
+import com.craftly.craftlycore.models.saga.SagaEventDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

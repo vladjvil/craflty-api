@@ -1,6 +1,6 @@
 package com.craftly.sagamodule.workflow;
 
-import com.craftly.craftlycore.saga.SagaEventDTO;
+import com.craftly.craftlycore.models.saga.SagaEventDTO;
 import io.temporal.workflow.WorkflowInterface;
 import io.temporal.workflow.WorkflowMethod;
 
