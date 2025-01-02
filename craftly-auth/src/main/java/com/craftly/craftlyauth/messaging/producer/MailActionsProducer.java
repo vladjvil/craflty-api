@@ -1,11 +1,10 @@
 package com.craftly.craftlyauth.messaging.producer;
 
-import com.craftly.craftlycore.exception.auth.MessageSerializationException;
+import com.craftly.craftlycore.messaging.KafkaTopics;
 import com.craftly.craftlycore.models.auth.mail.ForgotPasswordMessage;
 import com.craftly.craftlycore.models.auth.mail.NewEmailVerificationMessage;
+
 import com.craftly.craftlycore.models.auth.mail.VerificationMessage;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nimbusds.jose.shaded.gson.Gson;
 import com.nimbusds.jose.shaded.gson.GsonBuilder;
 import lombok.RequiredArgsConstructor;
@@ -20,17 +19,17 @@ public class MailActionsProducer {
 
     public void executeSendVerificationMessage(VerificationMessage verificationMessage) {
         String message = gson.toJson(verificationMessage);
-        kafkaTemplate.send("sendVerificationMessage", message);
+        kafkaTemplate.send(KafkaTopics.MAIL_SENT_VERIFICATION_MESSAGE, message);
     }
 
     public void executeSendForgotPasswordMessage(ForgotPasswordMessage forgotPasswordMessage) {
         String message = gson.toJson(forgotPasswordMessage);
-        kafkaTemplate.send("sendForgotPasswordMessage", message);
+        kafkaTemplate.send(KafkaTopics.MAIL_SENT_FORGOT_PASSWORD_MESSAGE, message);
     }
 
     public void executeSendNewEmailVerificationMessage(NewEmailVerificationMessage verificationMessage) {
         String message = gson.toJson(verificationMessage);
-        kafkaTemplate.send("sendNewEmailVerificationMessage", message);
+        kafkaTemplate.send(KafkaTopics.MAIL_SENT_NEW_VERIFICATION_MESSAGE, message);
     }
 
 }
